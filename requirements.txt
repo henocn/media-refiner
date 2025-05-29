@@ -1,1 +1,11 @@
- 
+opencv-python
+Pillow
+moviepy
+librosa
+soundfile
+numpy
+click
+tqdm
+ffmpeg-python
+scikit-image
+pydub
