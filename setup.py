@@ -18,8 +18,8 @@ def read_readme():
 setup(
     name="media-refiner",
     version="1.0.0",
-    author="Media Refiner Team",
-    author_email="contact@media-refiner.com",
+    author="Henoc N'GASAMA",
+    author_email="ngasamah@gmail.com",
     description="Outil avancé d'amélioration de la qualité des médias pour vidéos, audio et images",
     long_description=read_readme(),
     long_description_content_type="text/markdown",

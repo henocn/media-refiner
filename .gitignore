@@ -35,3 +35,7 @@ htmlcov/
 
 #perso
 arch.bat
+examples/
+temp*
+*TEMP*.*
+refined_media
