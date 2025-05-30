@@ -2,16 +2,14 @@ from setuptools import setup, find_packages
 import os
 
 
-def read_requirements():
-    with open('requirements.txt', 'r') as f:
-        return [line.strip() for line in f if line.strip() and not line.startswith('#')]
-
-
 def read_readme():
     if os.path.exists('README.md'):
-        with open('README.md', 'r', encoding='utf-8') as f:
-            return f.read()
-    return "Advanced media quality enhancement tool"
+        try:
+            with open('README.md', 'r', encoding='utf-8') as f:
+                return f.read()
+        except:
+            pass
+    return "Outil avancé d'amélioration de la qualité des médias pour vidéos, audio et images"
 
 
 #------------------------------------------------------------------#
@@ -21,11 +19,11 @@ setup(
     name="media-refiner",
     version="1.0.0",
     author="Media Refiner Team",
-    author_email="ngasamah@gmail.com",
-    description="Advanced media quality enhancement tool for videos, audio and images",
+    author_email="contact@media-refiner.com",
+    description="Outil avancé d'amélioration de la qualité des médias pour vidéos, audio et images",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
-    url="https://github.com/media-refiner/media-refiner",
+    url="https://github.com/henocn/media-refiner",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -44,7 +42,20 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     python_requires=">=3.8",
-    install_requires=read_requirements(),
+    install_requires=[
+        "opencv-python>=4.8.0",
+        "numpy>=1.24.0",
+        "pillow>=10.0.0",
+        "librosa>=0.10.0",
+        "soundfile>=0.12.0",
+        "scipy>=1.10.0",
+        "pydub>=0.25.0",
+        "moviepy==1.0.3",
+        "ffmpeg-python>=0.2.0",
+        "tqdm>=4.65.0",
+        "click>=8.1.0",
+        "scikit-image>=0.20.0",
+    ],
     extras_require={
         "dev": [
             "pytest>=7.0.0",
@@ -83,6 +94,7 @@ setup(
     ],
     project_urls={
         "Bug Reports": "https://github.com/henocn/media-refiner/issues",
-        "Source": "https://github.com/henocn/media-refiner.git",
+        "Source": "https://github.com/henocn/media-refiner",
+        "Documentation": "https://media-refiner.readthedocs.io/",
     },
 )
